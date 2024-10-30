@@ -1,5 +1,5 @@
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../../db/database.js';
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../database.js');
 
 class Campain extends Model { }
 
@@ -77,4 +77,4 @@ Campain.init({
 
 });
 
-export default Campain;
+module.exports = Campain;

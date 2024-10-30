@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../../db/database.js';
+import sequelize from '../database.js';
 
 class Tree extends Model { }
 
