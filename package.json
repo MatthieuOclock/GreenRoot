@@ -1,5 +1,5 @@
 {
-  "name": "GreenRoot",
+  "name": "greenroot",
   "version": "1.0.0",
   "description": "Apo_oclock",
   "main": "app.js",
@@ -32,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12"
   }
 }
