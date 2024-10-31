@@ -1,4 +1,4 @@
-import banniere from "./logo-greenroots.jpg";
+// import banniere from "./logo-greenroots.png";
 
 // Nous utilisons une vidéo comme bannière.
 // Nous avons fait un texte explicatif de notre site.
@@ -7,9 +7,9 @@ const Description = () => {
     <>
       <h1>GreenRoots</h1>
       <section className="sectionDescription">
-        <img loading="lazy" className="imageDescription" src={banniere}>
+        {/* <img loading="lazy" className="imageDescription" src={banniere}>
           {" "}
-        </img>
+        </img> */}
         <p className="description">
           Dans un monde où les enjeux environnementaux ne cessent de croître, il
           est essentiel que chacun prenne conscience de la fragilité de notre
