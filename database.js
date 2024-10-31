@@ -1,5 +1,5 @@
-const { Sequelize } = require("sequelize");
-const dotenv = require('dotenv');
+import { Sequelize } from "sequelize";
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ const sequelize = new Sequelize(process.env.PG_URL, {
 });
 
 // on exporte ce qui représente notre client connecté à la base donnée
-module.exports = sequelize;
+export default sequelize;
 
 
 //Autre méthode pour la migration et le seeding par docker compose

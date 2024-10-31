@@ -1,4 +1,4 @@
-const User = require("../models/user");
+import User from "../models/user.js";
 
 async function displayUsers() {
     try {
@@ -11,4 +11,4 @@ async function displayUsers() {
     }
 }
 
-module.exports = displayUsers(); 
+export default displayUsers(); 

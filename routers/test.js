@@ -1,9 +1,9 @@
-const express = require("express");
-const route = express.Router(); 
-const db = require("../data/recupData/repUser"); 
+import express from 'express';
+const routetest = express.Router(); 
+import db from "../data/recupData/repUser.js"; 
 
-route.get("/" , (req , res) => { 
-    res.status(200).json({message: "ok ça marche",test: db}); 
+routetest.get("/" , (req , res) => { 
+    res.status(200).json({message: "ok ça marche",test: db, test2: {message : 2}}); 
 })
 
-module.exports = route ; 
+export default routetest; 

@@ -1,17 +1,22 @@
-const express = require("express"); 
+import express from "express"; 
+
+import route from './routers/route.js'; 
+import dotenv from 'dotenv';
+dotenv.config(); 
+
+import test from "./routers/test.js"; 
 
 const app = express(); 
 const port = 3000; 
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send(process.env.PG_URL)
   }); 
 
-const route = require("./routers/route"); 
-
 app.use("/route" , route); 
-
-const test = require("./routers/test"); 
 
 app.use("/test" , test); 
 
