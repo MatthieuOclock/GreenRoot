@@ -1,6 +1,6 @@
 // import Campains from "../campains/Campains";
-import Description from "../../components/description/Description";
-import Button from "../../components/button/Button";
+import Description from "./components/Description/text.js";
+import Button from "./components/ButtonDonation/button.js";
 const Home = () => {
   return (
     <>
