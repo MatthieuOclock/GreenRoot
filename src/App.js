@@ -1,11 +1,10 @@
-import Home from "./Home/page.js";
-
+import Visiteur from "./Pages/Visiteur/index.js";
 import React from "react";
 
 function App() {
   return (
     <>
-      <Home />
+      <Visiteur />
     </>
   );
 }
