@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config(); 
 
 import test from "./routers/test.js"; 
+import campain from "./routers/routeCampain.js"; 
 
 const app = express(); 
 const port = 3000; 
@@ -19,6 +20,8 @@ app.get('/', (req, res) => {
 app.use("/route" , route); 
 
 app.use("/test" , test); 
+
+app.use("/campain", campain); 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

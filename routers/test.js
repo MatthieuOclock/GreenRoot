@@ -1,9 +1,10 @@
 import express from 'express';
 const routetest = express.Router(); 
-import db from "../data/recupData/repUser.js"; 
+import allCampain from '../data/recupData/recupCampain/allCampain.js';
 
-routetest.get("/" , (req , res) => { 
-    res.status(200).json({message: "ok ça marche",test: db, test2: {message : 2}}); 
+routetest.get("/" , async (req , res) => { 
+    const campain = await allCampain; 
+    res.status(200).json({message: "ok ça marche", test2: {message : campain}}); 
 })
 
 export default routetest; 

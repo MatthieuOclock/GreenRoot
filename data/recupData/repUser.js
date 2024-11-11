@@ -4,7 +4,9 @@ async function displayUsers() {
     try {
         const users = await User.findAll();
         users.forEach(user => {
-            return {'ID': user.id, 'first_name': user.first_name, 'Email': user.email};
+            //console.log(user); 
+            //console.log(user.dataValues.id); 
+            return {"user":user};
         });
     } catch (error) {
         return `Error fetching users: ${error}`;
