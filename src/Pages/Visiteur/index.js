@@ -6,7 +6,6 @@ function Visiteur(){
     return(
         <div class="main">
             <Router>
-                <p>a</p>
                 <Routes>
                     <Route path="*" element= {<Home />} />
                 </Routes>
