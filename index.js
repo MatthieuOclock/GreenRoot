@@ -13,6 +13,8 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(process.cwd(), 'public')));
+
 app.get('/', (req, res) => {
     res.send(process.env.PG_URL)
   }); 
