@@ -12,8 +12,8 @@ function Visiteur() {
         <Head />
         <Routes>
           <Route path="*" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="GreenRoot/Home" element={<Home />} />
+          <Route path="GreenRoot/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </Router>
