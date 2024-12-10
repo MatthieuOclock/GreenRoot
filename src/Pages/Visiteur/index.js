@@ -9,12 +9,11 @@ function Visiteur() {
   return (
     <div class="main">
       <Router>
+        <Head />
         <Home />
         <Routes>
-          <Route path="*" element={<Head />} />
-          <Route path="*" element={<Home />} />
-          <Route path="*" element={<Contact />} />
-          <Route path="*" element={<Footer />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </Router>
