@@ -9,13 +9,13 @@ function Visiteur() {
   return (
     <div class="main">
       <Router>
-        <Head />
-        <Home />
+        <p>a</p>
         <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="*" element={<Head />} />
+          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Contact />} />
+          <Route path="*" element={<Footer />} />
         </Routes>
-        <Footer />
       </Router>
     </div>
   );
