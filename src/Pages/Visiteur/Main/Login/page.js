@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
-    const [formValues, setFormValues] = useState({
-        email: '',
-        password: ''
-    });
+    const [email, setEmail] = useState(""); 
+    const [password, setPassWord] = useState(""); 
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({
-            ...formValues,
-            [name]: value
-        });
-    };
+    const onSubmit = (event) => { 
+        const {name ,value} = event.target; 
+
+        switch(name) {
+            case "email" : 
+                setEmail(value); 
+                break; 
+            case "password" : 
+                setPassWord(value); 
+                break; 
+        }; 
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${process.env.URL_API}login`, {
+            const response = await fetch("login", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify(formValues)
+                body: JSON.stringify({email,password})
             });
 
             if (response.ok) {
@@ -54,8 +57,8 @@ const Login = () => {
                             title="Entrez votre email"
                             id="email"
                             name="email"
-                            value={formValues.email}
-                            onChange={handleInputChange}
+                            value={email}
+                            onChange={onSubmit}
                             required
                         />
                     </div>
@@ -67,8 +70,8 @@ const Login = () => {
                             title="Entrez votre password"
                             id="password"
                             name="password"
-                            value={formValues.password}
-                            onChange={handleInputChange}
+                            value={password}
+                            onChange={onSubmit}
                             required
                         />
                     </div>
