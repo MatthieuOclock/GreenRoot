@@ -1,9 +1,0 @@
-@use '../../styles/vars' as vars;
-@use '../../styles/mixins';
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
