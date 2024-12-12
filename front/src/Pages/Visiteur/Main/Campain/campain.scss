@@ -1,0 +1,30 @@
+@use '../../styles/vars' as vars;
+@use '../../styles/mixins';
+
+
+.card-container {
+    display: flex;
+    justify-content: center
+}
+
+.card-campain-p {
+    color: vars.$text2;
+    text-align: center;
+}
+
+.campain-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: vars.$text2;
+    background: vars.$natural-brown;
+    opacity: 70%;
+    font-size: 2rem;
+    border-style: none;
+    border-radius: 0 0 15px 15px;
+}
+
+.repo {
+    display: flex;
+    flex-direction: column;
+}
