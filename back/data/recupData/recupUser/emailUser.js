@@ -4,7 +4,7 @@ export default async function emailUser(email) {
     try{ 
         const user = await User.findOne({ where: { email } });
         if(user) { 
-            return [user]; 
+            return [user.dataValues]; 
         } else { 
             return []; 
         }; 

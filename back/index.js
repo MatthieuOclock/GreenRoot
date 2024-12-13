@@ -2,16 +2,23 @@ import express from "express";
 
 import route from './routers/route.js'; 
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config(); 
 
 import test from "./routers/test.js"; 
 import campain from "./routers/routeCampain.js"; 
+import login from "./routers/authentificate/login.js"; 
 
-import jwt from 'jsonwebtoken';
 import bodyParser from 'body-parser';
 
+
 const app = express(); 
-const port = 3000; 
+const port = 1234; 
+
+app.use(cors({
+  origin: 'http://localhost:3000', 
+  credentials: true, 
+}));
 
 app.use(bodyParser.json());
 
@@ -29,6 +36,8 @@ app.use("/route" , route);
 app.use("/test" , test); 
 
 app.use("/campain", campain); 
+
+app.use("/testlogin",login); 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
