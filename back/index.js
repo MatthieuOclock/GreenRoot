@@ -8,6 +8,7 @@ dotenv.config();
 import test from "./routers/test.js"; 
 import campain from "./routers/routeCampain.js"; 
 import login from "./routers/authentificate/login.js"; 
+import inscrition from "./routers/inscription.js; "
 
 import bodyParser from 'body-parser';
 
@@ -38,6 +39,8 @@ app.use("/test" , test);
 app.use("/campain", campain); 
 
 app.use("/testlogin",login); 
+
+app.use("/inscription",inscrition); 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

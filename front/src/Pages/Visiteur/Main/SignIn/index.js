@@ -22,7 +22,7 @@ const SignIn = () => {
         }
 
         try {
-            const response = await fetch(`${process.env.URL_API}register`, {
+            const response = await fetch("http://localhost:1234/register", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
