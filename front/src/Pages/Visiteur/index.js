@@ -18,19 +18,16 @@ function Visiteur() {
         <Header />
         <Routes>
           <Route path="*" element={<Home />} />
-          <Route path="GreenRoot/Acceuil" element={<Home />} />
-          <Route path="GreenRoot/contact" element={<Contact />} />
-          <Route path="GreenRoot/connexion" element={<Login />} />
-          <Route path="GreenRoot/inscription" element={<SignIn />} />
-          <Route path="GreenRoot/campagnes" element={<Campains />} />
-          <Route path="GreenRoot/arbres" element={<Trees />} />
+          <Route path="/GreenRoot/Acceuil" element={<Home />} />
+          <Route path="/GreenRoot/contact" element={<Contact />} />
+          <Route path="/GreenRoot/connexion" element={<Login />} />
+          <Route path="/GreenRoot/inscription" element={<SignIn />} />
+          <Route path="/GreenRoot/campagnes" element={<Campains />} />
+          <Route path="/GreenRoot/arbres" element={<Trees />} />
 
           {/* <Route path="/a-propos" element={<APropos />} />
-          <Route path="/campagne/:campainId" element={<Campain />} />
-          
-          <Route path="/arbre/:treeId" element={<Tree />} />
-          
-          <Route path="/connexion" element={<Login />} />
+          <Route path="/campagne/:campainId" element={<Campain />} />         
+          <Route path="/arbre/:treeId" element={<Tree />} />         
           <Route path="/mentions-legales" element={<LegalNotices />} />
           <Route path="/profil" element={<User />} />
           <Route path="/panier" element={<Panier />} />
