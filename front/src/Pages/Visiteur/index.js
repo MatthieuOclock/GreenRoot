@@ -10,6 +10,16 @@ import Header from "./Header/header.js";
 import Footer from "./Footer/footer.js";
 import Campains from "./Main/Campains/page.js";
 import Trees from "./Main/Trees/page.js";
+import About from "./Main/APropos/page.js";
+import LegalNotices from "./Main/LegalNotices/page.js";
+import User from "./Main/User/page.js";
+import Panier from "./Main/Panier/page.js";
+import Command from "./Main/Commande/page.js";
+import Payment from "./Main/Payment/page.js";
+import Campain from "./Main/Campain/page.js";
+import Tree from "./Main/Tree/page.js";
+import ConfirmationCommand from "./Main/ConfirmationCommand/page.js";
+import Administrateur from "./Main/BackOffice/Administateur/page.js";
 
 function Visiteur() {
   return (
@@ -18,29 +28,28 @@ function Visiteur() {
         <Header />
         <Routes>
           <Route path="*" element={<Home />} />
-          <Route path="GreenRoot/Acceuil" element={<Home />} />
-          <Route path="GreenRoot/contact" element={<Contact />} />
-          <Route path="GreenRoot/connexion" element={<Login />} />
-          <Route path="GreenRoot/inscription" element={<SignIn />} />
-          <Route path="GreenRoot/campagnes" element={<Campains />} />
-          <Route path="GreenRoot/arbres" element={<Trees />} />
-
-          {/* <Route path="/a-propos" element={<APropos />} />
-          <Route path="/campagne/:campainId" element={<Campain />} />
-          
-          <Route path="/arbre/:treeId" element={<Tree />} />
-          
-          <Route path="/connexion" element={<Login />} />
-          <Route path="/mentions-legales" element={<LegalNotices />} />
-          <Route path="/profil" element={<User />} />
-          <Route path="/panier" element={<Panier />} />
-          <Route path="/paiement" element={<Payment />} />
-          <Route path="/commande" element={<Command />} />
+          <Route path="/GreenRoot/Acceuil" element={<Home />} />
+          <Route path="/GreenRoot/contact" element={<Contact />} />
+          <Route path="/GreenRoot/connexion" element={<Login />} />
+          <Route path="/GreenRoot/inscription" element={<SignIn />} />
+          <Route path="/GreenRoot/campagnes" element={<Campains />} />
+          <Route path="/GreenRoot/arbres" element={<Trees />} />
+          <Route path="/GreenRoot/a-propos" element={<About />} />
           <Route
-            path="/confirmation-commande"
+            path="/GreenRoot/mentions-legales"
+            element={<LegalNotices />}
+          />
+          <Route path="/GreenRoot/profil" element={<User />} />
+          <Route path="/GreenRoot/panier" element={<Panier />} />
+          <Route path="/GreenRoot/commande" element={<Command />} />
+          <Route path="/GreenRoot/paiement" element={<Payment />} />
+          <Route path="/GreenRoot/campagne/:campainId" element={<Campain />} />
+          <Route path="/GreenRoot/arbre/:treeId" element={<Tree />} />
+          <Route
+            path="/GreenRoot/confirmation-commande"
             element={<ConfirmationCommand />}
           />
-          <Route path="/admin" element={<Administrateur />} /> */}
+          <Route path="/GreenRoot/admin" element={<Administrateur />} />
         </Routes>
         <ToastContainer />
         <Footer />
