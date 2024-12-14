@@ -44,16 +44,16 @@ const Header = () => {
           className="menu_container"
         >
           <div className="logo">
-            <a href="GreenRoot/">
+            <a href="/GreenRoot/">
               <img loading="lazy" src={Logo} alt="GreenRoots (logo)"></img>
             </a>
           </div>
           <ul className="menu_list">
             <li className="menu_list-item">
-              <a href="GreenRoot/campagnes">Toutes les campagne</a>
+              <a href="/GreenRoot/campagnes">Toutes les campagne</a>
             </li>
             <li className="menu_list-item">
-              <a href="GreenRoot/arbres">Catalogue d'Arbre</a>
+              <a href="/GreenRoot/arbres">Catalogue d'Arbre</a>
             </li>
             <li>
               <img
@@ -66,11 +66,11 @@ const Header = () => {
             <li>
               {isLoggedIn ? (
                 <>
-                  <a href="GreenRoot/profil">Mon espace</a>
+                  <a href="/GreenRoot/profil">Mon espace</a>
                 </>
               ) : (
                 <>
-                  <a href="GreenRoot/connexion">Connexion</a>
+                  <a href="/GreenRoot/connexion">Connexion</a>
                 </>
               )}
             </li>
@@ -81,7 +81,7 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <a href="GreenRoot/inscription">Inscription</a>
+                  <a href="/GreenRoot/inscription">Inscription</a>
                 </>
               )}
             </li>
