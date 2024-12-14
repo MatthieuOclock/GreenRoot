@@ -40,7 +40,7 @@ app.use("/campain", campain);
 
 app.use("/testlogin",login); 
 
-app.use("/inscription",inscrition); 
+app.use("/register",inscrition); 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

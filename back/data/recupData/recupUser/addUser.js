@@ -10,6 +10,7 @@ export default async function addUser(first_name,last_Name,email,phone,role,pass
             role: role, 
             password: password
         }); 
+        console.log("user create"); 
     } catch (error){ 
         console.error('Error creating user:', error);
     }
