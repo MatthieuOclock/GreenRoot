@@ -1,0 +1,36 @@
+@use '../../../styles/vars' as vars;
+@use '../../../styles/mixins';
+
+.menu_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    background: vars.$blue-gradient-nature;
+
+    .logo{ 
+        margin: 2rem;
+    }
+
+    .menu_list {
+        float: right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 2.5rem;
+
+        li a{ 
+            color: black;
+
+        }
+    }
+
+}
+
+.profil {
+    margin: 0.5rem;
+    width: 3rem;
+    border: solid green 10px;
+    border-radius: 80px;
+}

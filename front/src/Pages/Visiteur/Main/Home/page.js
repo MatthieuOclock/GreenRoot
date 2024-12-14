@@ -1,4 +1,4 @@
-// import Campains from "../campains/Campains";
+import Campains from "../Campains/page.js";
 import Description from "./components/Description/text.js";
 import Button from "./components/ButtonDonation/button.js";
 const Home = () => {
@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <div className="home-container" role="main">
         <Description />
-        {/* <Campains /> */}
+        <Campains />
         <Button />
       </div>
     </>
