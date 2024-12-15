@@ -3,7 +3,7 @@ import emailUser from "../../data/recupData/recupUser/emailUser.js";
 import dotenv from 'dotenv';
 dotenv.config(); 
 
-const authenticate = async (email, password, data, res) => {
+const authenticate = async (email, password, res) => {
 
     const user = await emailUser(email); 
 
@@ -19,8 +19,6 @@ const authenticate = async (email, password, data, res) => {
 
     if(dataUser.role === "admin") {   
         const token = sign(dataUser.name,process.env.kEYM);
-        const id = dataUser.id; 
-        data.push({id ,token});  
         return res.json({token}); 
     } else { 
         return res.status(401).json({ message: 'Identifiants invalides' });
