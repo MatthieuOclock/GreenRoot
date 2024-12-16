@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Card from './card';
-import CardTrees from './cardTree';
+import Card from './card/index.js';
+import CardTrees from '../../Visiteur/Main/Trees/card/index.js';
 
 function User() {
     const [user, setUser] = useState({

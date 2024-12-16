@@ -21,6 +21,8 @@ import Tree from "./Main/Tree/page.js";
 import ConfirmationCommand from "./Main/ConfirmationCommand/page.js";
 import Administrateur from "./Main/BackOffice/Administateur/page.js";
 
+import Login from "../Membre/index.js";
+
 function Visiteur() {
   return (
     <div class="main">
@@ -39,7 +41,11 @@ function Visiteur() {
             path="/GreenRoot/mentions-legales"
             element={<LegalNotices />}
           />
-          <Route path="/GreenRoot/profil" element={<User />} />
+          <Route path="/GreenRoot/profil" element={
+            <Login>
+              <User />
+            </Login>
+            } />
           <Route path="/GreenRoot/panier" element={<Panier />} />
           <Route path="/GreenRoot/commande" element={<Command />} />
           <Route path="/GreenRoot/paiement" element={<Payment />} />

@@ -1,33 +1,51 @@
 import React from "react";
+import { useEffect, useState } from "react"
 import { Navigate} from "react-router-dom";
 
 async function Member ({children}){ 
+    const [verify,setVerify] = useState(null); 
     const token = localStorage.getItem('token'); 
 
-    if(token){ 
-        try { 
-            const response = await fetch("token",{
-                method: 'GET',
-                headers: {
-                    'Authorization': token, 
-                },
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.log('Erreur lors de l\'accès à la route protégée :', errorData.message);
-                return <Navigate to={"/"} />
+    useEffect(() => {
+        const verifyToken = async () => {
+            if (!token) {
+                setVerify(false); 
+                return;
             }
 
-            response.ok ? children : <Navigate to={"/"} />
+            try {
+                const response = await fetch("/token", {
+                    method: "GET",
+                    headers: {
+                        Authorization: token,
+                    },
+                });
 
-        } catch(error) { 
-            console.log("Erreur programme test token:", error); 
-            return <Navigate to={"/"} />
-        }; 
-    } else { 
-        return <Navigate to={"/"} />
+                if (response.ok) {
+                    setVerify(true);
+                } else {
+                    const errorData = await response.json();
+                    console.log("Erreur lors de l'accès à la route protégée :", errorData.message);
+                    setVerify(false);
+                }
+            } catch (error) {
+                console.log("Erreur programme test token:", error);
+                setVerify(false);
+            }
+        };
+
+        verifyToken();
+    }, [token]);
+
+    if (verify === null) {
+        return <div>Loading...</div>;
     }
-} 
 
-export default Member; 
+    if (!verify) {
+        return <Navigate to="/" />;
+    }
+
+    return <>{children}</>;
+}
+
+export default Member;
