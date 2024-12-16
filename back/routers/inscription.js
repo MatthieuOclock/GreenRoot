@@ -32,7 +32,7 @@ route.post("/", async (req, res) => {
         res.status(500).json({ message: "Erreur lors de la création de l'utilisateur" });
     }
 });
-
+//a
 // Endpoint pour récupérer la liste des utilisateurs (pour les tests uniquement)
 route.get("/inscription", (req, res) => {
     res.json({ user: reponse });
