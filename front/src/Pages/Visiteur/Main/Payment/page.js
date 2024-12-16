@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { jwtDecode } from 'jwt-decode';
 import jwt_decode from 'jwt-decode';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
@@ -113,7 +114,7 @@ const StripePaymentForm = ({ clientSecret, panier }) => {
                 return;
             }
 
-            const decodedToken = jwt_decode(token);
+            const decodedToken = jwtDecode(token);
             const userId = decodedToken.userId;
 
             const totalAmount = parseFloat(panier.reduce((total, tree) => total + parseFloat(tree.price) * tree.quantity, 0).toFixed(2));
