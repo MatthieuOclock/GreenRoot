@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useContext } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import jwt_decode from 'jwt-decode';
@@ -7,20 +6,6 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import { CartContext } from '../../../../CardContext.js';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-=======
-import React, { useState, useEffect, useContext } from "react";
-// import jwt_decode from 'jwt-decode';
-import { loadStripe } from "@stripe/stripe-js";
-import {
-  Elements,
-  CardElement,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
-import { CartContext } from "../../../../CardContext.js";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
->>>>>>> 7333784ecf2c73f761720cfecd161a6ddc0a0bdf
 
 const stripePromise = loadStripe(
   "pk_test_51PM77gHRY0RGHhfcc3yltn0UQxor4nbXVuwIU2OBjzRA3TkSUx5G3ioywHLbK1qZasZoyatbz9wc35NghOalG7Rk00Y7jlQmhi"
@@ -144,13 +129,8 @@ const StripePaymentForm = ({ clientSecret, panier }) => {
         return;
       }
 
-<<<<<<< HEAD
             const decodedToken = jwtDecode(token);
             const userId = decodedToken.userId;
-=======
-      const decodedToken = jwt_decode(token);
-      const userId = decodedToken.userId;
->>>>>>> 7333784ecf2c73f761720cfecd161a6ddc0a0bdf
 
       const totalAmount = parseFloat(
         panier
