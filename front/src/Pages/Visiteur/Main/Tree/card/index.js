@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../../../components/App/CardContext';
+import { CartContext } from '../../../../../CardContext.js';
 
 const CardTree = ({ treeId, race, price, description, status, picture }) => {
     const { addToCart } = useContext(CartContext);

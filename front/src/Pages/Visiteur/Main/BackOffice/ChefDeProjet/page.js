@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Partenaire from "../Partenaire/page";
+import Partenaire from "../Partenaire/page.js";
 
 const ChefDeProjet = () => {
   const [campains, setCampains] = useState([]);

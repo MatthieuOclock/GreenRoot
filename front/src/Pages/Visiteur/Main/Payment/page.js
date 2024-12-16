@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import jwt_decode from 'jwt-decode';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { CartContext } from '../../components/App/CardContext';
+import { CartContext } from '../../../../CardContext.js';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

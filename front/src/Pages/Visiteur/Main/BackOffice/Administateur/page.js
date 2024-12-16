@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ChefDeProjet from "../ChefDeProjet/page";
-import Partenaire from "../Partenaire/page";
+import ChefDeProjet from "../ChefDeProjet/page.js";
+import Partenaire from "../Partenaire/page.js";
 
 const Administrateur = () => {
   const [users, setUsers] = useState([]);

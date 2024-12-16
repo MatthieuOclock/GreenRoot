@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import CardTree from "./card";
+import CardTree from "./card/index.js";
 import { CartContext } from "../../../../CardContext";
 
 function Trees() {

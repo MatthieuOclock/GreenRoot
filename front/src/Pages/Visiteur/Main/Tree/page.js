@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { CartContext } from '../../components/App/CardContext';
-import CardTree from '../Tree/card/index.js'
+import { CartContext } from '../../../../CardContext.js';
+import CardTree from './card/index.js'; 
 
 
 function Tree() {

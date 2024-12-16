@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../../components/App/CardContext';
+import { CartContext } from '../../../../CardContext.js';
 
 const Panier = () => {
     const { panier, incrementQuantity, decrementQuantity, clearCart } = useContext(CartContext);
