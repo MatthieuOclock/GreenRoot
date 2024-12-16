@@ -1,0 +1,74 @@
+# version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./BACK
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+      - PG_URL=postgres://greenroots:greenroots@database:5432/greenroots
+      - PGUSER=greenroots
+      - PGHOST=database
+      - PGPASSWORD=greenroots
+      - PGDATABASE=greenroots
+      - PGPORT=5432
+      - SECRET=akofzakoaeoakpoaekoaefop
+      - JWT_SECRET=fkepafpkeapokfakefpoa
+    ports:
+      - "8080:3000"
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./FRONT
+      dockerfile: Dockerfile
+    ports:
+      - "8443:1234"
+    depends_on:
+      - backend
+
+  database:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: greenroots
+      POSTGRES_PASSWORD: greenroots
+      POSTGRES_DB: greenroots
+    volumes:
+      # - pgdata:/var/lib/postgresql/data
+      - ./BACK/src/db/migration.sql:/docker-entrypoint-initdb.d/create_tables.sql # va créer les tables dans la bdd
+      - ./psql:/var/lib/postgresql/data
+      # autre méthode pour la migration et le seeding
+      #  volumes: 
+      # - pgdata:/var/lib/postgresql/data
+      # - ./BACK/src/db:/docker-entrypoint-initdb.d
+
+    ports:
+      - "5433:5432"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: database
+      depends_on: database
+volumes:
+  pgdata:
+
+# database:
+#     image: postgres:14
+#     environment:
+#       POSTGRES_USER: greenroots
+#       POSTGRES_PASSWORD: greenroots
+#       POSTGRES_DB: greenroots
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+#       - ./BACK/src/db:/docker-entrypoint-initdb.d
+#     ports:
+#       - "5433:5432"
+
+# volumes:
+#   pgdata:
