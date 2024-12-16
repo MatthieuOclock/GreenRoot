@@ -12,7 +12,7 @@ import Campains from "./Main/Campains/page.js";
 import Trees from "./Main/Trees/page.js";
 import About from "./Main/APropos/page.js";
 import LegalNotices from "./Main/LegalNotices/page.js";
-import User from "./Main/User/page.js";
+import User from "../Membre/User/page.js";
 import Panier from "./Main/Panier/page.js";
 import Command from "./Main/Commande/page.js";
 import Payment from "./Main/Payment/page.js";
