@@ -8,8 +8,8 @@ const verifyMembre = (req,res,next) => {
     if(!token) return res.status(401)
 
     jwt.verify(token, process.env.KEYM, (err, user) => {
-        if (err) return res.sendStatus(403); // Token invalide
-        req.user = user; // Ajouter l'utilisateur vérifié à la requête
+        if (err) return res.sendStatus(403); 
+        req.user = user; 
         next();
     });
 }; 
