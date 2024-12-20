@@ -4,9 +4,9 @@ const CardCampain = ({ campainId, name, place, date_begin, date_end, picture }) 
     return (
 
         <div className="card-campains">
-            <a className="repo" href={`/campagne/${campainId}`} >
+            <a className="repo" href={`/GreenRoot/campagne/${campainId}`} >
 
-                <img loading="lazy" src={`${process.env.URL_API}${picture}`} alt="picture" />
+                <img loading="lazy" src={`http://localhost:1234/${picture}`} alt="picture" />
 
                 <div className="campain-info">
                     <h3>{name}</h3>

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../../../../CardContext";
+import { CartContext } from "../../../../../CardContext.js";
 import { toast } from "react-toastify";
 
 const CardTree = ({ treeId, race, price, description, status, picture }) => {

@@ -9,9 +9,9 @@ function Campain() {
 
     const getCampain = async () => {
         try {
-            const response = await fetch(`${process.env.URL_API}campain/${campainId}`);
+            const response = await fetch(`http://localhost:1234/campain/${campainId}`);
             const data = await response.json();
-            setCampain(data);
+            setCampain(data.data);
             console.log(data);
 
         } catch (error) {
@@ -30,7 +30,7 @@ function Campain() {
 
                 <div className='card-campains'>
                     <h3>{campain.name}</h3>
-                    <img loading="lazy" src={`${process.env.URL_API}${campain.picture}`} alt='image de campagne' />
+                    <img loading="lazy" src={`http://localhost:1234/${campain.picture}`} alt='image de campagne' />
                     <p className='card-campain-p'>{campain.place}</p>
                     <p className='card-campain-p'>Date de debut : {campain.date_begin} €</p>
                     <p className='card-campain-p'>Date de fin :{campain.date_end}</p>

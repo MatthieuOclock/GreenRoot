@@ -6,10 +6,10 @@ function Campains() {
 
     const getCampains = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/campain`);
+            const response = await fetch(`http://localhost:1234/campain`);
             const data = await response.json();
-            setCampains(data);
-            console.log(data);
+            setCampains(data.data);
+            console.log(data.data);
 
         } catch (error) {
             console.error('Erreur de récupération des arbres:', error);

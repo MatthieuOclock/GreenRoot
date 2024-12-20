@@ -9,6 +9,7 @@ import test from "./routers/test.js";
 import campain from "./routers/routeCampain.js"; 
 import login from "./routers/authentificate/login.js"; 
 import inscrition from "./routers/inscription.js"; 
+import tree from "./routers/routeTree.js";
 
 import bodyParser from 'body-parser';
 
@@ -27,6 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.send(process.env.PG_URL)
@@ -41,6 +43,8 @@ app.use("/campain", campain);
 app.use("/testlogin",login); 
 
 app.use("/register",inscrition); 
+
+app.use("/tree", tree); 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

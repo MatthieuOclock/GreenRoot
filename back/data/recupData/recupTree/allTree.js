@@ -10,7 +10,7 @@ async function allTree() {
             itemsTree.push(tree); 
         });
 
-        return itemsOrder; 
+        return itemsTree; 
     } catch (error) {
         return `Error fetching tree: ${error}`;
     }

@@ -1,17 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import CardTree from "./card/index.js";
-import { CartContext } from "../../../../CardContext";
 
 function Trees() {
   const [trees, setTrees] = useState([]);
-  const { addToCart } = useContext(CartContext);
-
   // console.log(trees[2].id);
   const getTrees = async () => {
     try {
-      const response = await fetch(`${process.env.URL_API}tree`);
+      const response = await fetch(`http://localhost:1234/tree`);
       const data = await response.json();
-      setTrees(data);
+      setTrees(data.data);
     } catch (error) {
       console.error("Erreur de récupération des arbres:", error);
       alert("Erreur de récupération");
@@ -37,7 +34,6 @@ function Trees() {
                 description={tree.description}
                 picture={tree.picture}
                 status={tree.status}
-                addToCart={() => addToCart(tree)} // Utilisation du contexte
               />
             ))}
           </div>
