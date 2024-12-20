@@ -50,7 +50,7 @@ function Visiteur() {
           <Route path="/GreenRoot/commande" element={<Command />} />
           <Route path="/GreenRoot/paiement" element={<Payment />} />
           <Route path="/GreenRoot/campagne/:campainId" element={<Campain />} />
-          <Route path="/GreenRoot/arbre/:treeId" element={<Tree />} />
+          <Route path="/GreenRoot/arbres/:treeId" element={<Tree />} />
           <Route
             path="/GreenRoot/confirmation-commande"
             element={<ConfirmationCommand />}

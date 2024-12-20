@@ -12,9 +12,9 @@ function Tree() {
 
     const getTree = async () => {
         try {
-            const response = await fetch(`${process.env.URL_API}tree/${treeId}`);
+            const response = await fetch(`http://localhost:1234/tree/${treeId}`);
             const data = await response.json();
-            setTree(data);
+            setTree(data.data);
             console.log(data);
 
         } catch (error) {

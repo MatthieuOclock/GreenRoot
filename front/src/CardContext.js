@@ -1,7 +1,13 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-export const CartContext = createContext("");
+export const CartContext = createContext({ 
+    panier: [], 
+    addToCart : () => {}, 
+    incrementQuantity : () => {}, 
+    decrementQuantity : () => {}, 
+    clearCart : () => {}
+});
 
 export const CartProvider = ({ children }) => {
     const [panier, setPanier] = useState([]);

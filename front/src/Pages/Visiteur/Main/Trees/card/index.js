@@ -3,7 +3,7 @@ import { CartContext } from "../../../../../CardContext.js";
 import { toast } from "react-toastify";
 
 const CardTree = ({ treeId, race, price, description, status, picture }) => {
-  const { addToCart } = useContext(CartContext);
+  const {addToCart} = useContext(CartContext);
 
   const handleAddToCart = () => {
     addToCart({ treeId, race, price, description, status, picture });
@@ -12,10 +12,10 @@ const CardTree = ({ treeId, race, price, description, status, picture }) => {
 
   return (
     <div className="card-trees">
-      <a className="repo" href={`/arbre/${treeId}`}>
+      <a className="repo" href={`/GreenRoot/arbres/${treeId}`}>
         <img
           loading="lazy"
-          src={`${process.env.URL_API}${picture}`}
+          src={`http://localhost:1234/${picture}`}
           alt="arbre"
         />
         <div className="trees-info">
