@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../../../../CardContext.js';
 
 const CardTree = ({ treeId, race, price, description, status, picture}) => {
-    const context = useContext(CartContext);
-    console.log("ok",context)
+    const {addToCart}= useContext(CartContext);
     return (
         <div className="container-tree">
             <h2>{race}</h2>
@@ -16,7 +15,7 @@ const CardTree = ({ treeId, race, price, description, status, picture}) => {
                 </div>
             </a>
             <button onClick={() => {
-                context.addToCart({ race, price, description, status, picture });
+                addToCart({ race, price, description, status, picture });
                 alert('Votre arbre a été ajouté au panier');
             }}>
                 Ajouter au panier

@@ -44,10 +44,10 @@ function Footer() {
         </div>
 
         <div className="footer-links">
-          <a href="/contact">Contact</a>
-          <a href="/mentions-legales">Mentions Légales</a>
-          <a href="/a-propos">À propos</a>
-          <a href="/accessibilite">Accessibilité</a>
+          <a href="/GreenRoot/contact">Contact</a>
+          <a href="/GreenRoot/mentions-legales">Mentions Légales</a>
+          <a href="/GreenRoot/a-propos">À propos</a>
+          <a href="/GreenRoot/accessibilite">Accessibilité</a>
         </div>
       </div>
       <div className="footer-bottom">

@@ -6,7 +6,6 @@ import CardTree from './card/index.js';
 
 function Tree() {
     const [tree, setTree] = useState([]);
-    const { addToCart } = useContext(CartContext);
     let { treeId } = useParams();
     console.log(treeId);
 
@@ -40,7 +39,6 @@ function Tree() {
                         description={tree.description}
                         picture={tree.picture}
                         status={tree.status}
-                        addToCart={() => addToCart(tree)} // Utilisation du contexte
                     />
                 </div>
             </div>

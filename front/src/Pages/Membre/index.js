@@ -1,15 +1,14 @@
-import React from "react";
-import { useEffect, useState } from "react"
-import { Navigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
-async function Member ({children}){ 
-    const [verify,setVerify] = useState(null); 
-    const token = localStorage.getItem('token'); 
+function Member({ children }) {
+    const [verify, setVerify] = useState(null);
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
         const verifyToken = async () => {
             if (!token) {
-                setVerify(false); 
+                setVerify(false);
                 return;
             }
 
@@ -42,7 +41,7 @@ async function Member ({children}){
     }
 
     if (!verify) {
-        return <Navigate to="/" />;
+        return <Navigate to="/GreenRoot/home" />;
     }
 
     return <>{children}</>;
