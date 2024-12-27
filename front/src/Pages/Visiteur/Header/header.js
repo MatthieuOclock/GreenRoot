@@ -1,12 +1,39 @@
 import Search from "../Search/index.js";
 import Logo from "./logo-greenroots.png";
 import person from "./person.png";
-import islogin from "./verify.js";
-import deco from "./deconnexion.js";
+import React, { useState, useEffect } from "react";
 // Dans le header nous avons mis des liens vers les pages campagnes et arbres.
 // Nous utilisons aussi les composants Search et MySpace.
 
 const Header = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    const handleLogout = async () => {
+        try {
+            const response = await fetch(`http://localhost:1234/logout`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+
+            if (response.ok) {
+                alert('Déconnexion réussie!');
+                localStorage.removeItem('token');
+                window.location.href = '/GreenRoot/connexion'; // Redirige vers la page de connexion
+            }
+        } catch (error) {
+            console.error('Erreur lors de la déconnexion:', error);
+            alert('Erreur lors de la déconnexion. Veuillez réessayer plus tard.');
+        }
+    };
 
   return (
     <>
@@ -17,7 +44,7 @@ const Header = () => {
           className="menu_container"
         >
           <div className="logo">
-            <a href="/GreenRoot/">
+            <a href="/GreenRoot/Home">
               <img loading="lazy" src={Logo} alt="GreenRoots (logo)"></img>
             </a>
           </div>
@@ -37,7 +64,7 @@ const Header = () => {
               />
             </li>
             <li>
-              {islogin ? (
+              {isLoggedIn ? (
                 <>
                   <a href="/GreenRoot/profil">Mon espace</a>
                 </>
@@ -48,9 +75,9 @@ const Header = () => {
               )}
             </li>
             <li>
-              {islogin ? (
+              {isLoggedIn ? (
                 <>
-                  <button onClick={deco}>Déconnexion</button>
+                  <button onClick={handleLogout}>Déconnexion</button>
                 </>
               ) : (
                 <>

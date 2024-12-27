@@ -12,7 +12,7 @@ const authenticate = async (email, password, res) => {
     }
     console.log(user); 
     const dataUser = user[0]; 
-    console.log(dataUser,email, password, data)
+    console.log(dataUser,email, password)
     if(dataUser.password != password){ 
         return res.status(401).json({ message: 'Identifiants invalides' });
     } 

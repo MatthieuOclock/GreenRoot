@@ -25,7 +25,7 @@ function User() {
             try {
                 const token = localStorage.getItem('token');
 
-                const userResponse = await fetch(`${process.env.URL_API}user/test/test`, {
+                const userResponse = await fetch(`http://localhost:1234/user`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
