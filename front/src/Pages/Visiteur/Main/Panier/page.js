@@ -12,7 +12,7 @@ const Panier = () => {
                     {panier.length > 0 ? (
                         panier.map((tree, index) => (
                             <div key={index} className="produit">
-                                <img loading="lazy" src={`${process.env.URL_API}${tree.picture}`} alt='arbre' className="produit-image" />
+                                <img loading="lazy" src={`http://localhost:1234/${tree.picture}`} alt='arbre' className="produit-image" />
                                 <div className="produit-details">
                                     <h2>{tree.race}</h2>
                                     <p>Prix: {tree.price}€</p>
@@ -30,7 +30,7 @@ const Panier = () => {
                 </div>
                 <div className="total">
                     <h2>Total: {panier.reduce((total, tree) => total + tree.price * tree.quantity, 0)}€</h2>
-                    <a href='/paiement'>Passer à la page de paiement</a>
+                    <a href='/Greenroot/paiement'>Passer à la page de paiement</a>
                     <button onClick={clearCart} className="clear-button">Vider le panier</button>
                 </div>
             </div>
