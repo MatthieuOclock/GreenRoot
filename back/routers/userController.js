@@ -39,7 +39,7 @@ const user = {
     async getMe(req, res) {
         try {
             const userId = req.user.id;// Récupérer l'id de l'utilisateur connecté
-            console.log(userId);
+            console.log(userId,"ok");
             const user = await User.findByPk(userId);
             if (!user) {
                 return res.status(404).json({ message: "Utilisateur non trouvé" });

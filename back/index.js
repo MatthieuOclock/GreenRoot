@@ -59,15 +59,13 @@ app.use("/campain", campain);
 
 app.use("/testlogin",login); 
 
-app.use("/register",inscrition); 
-
 app.use("/tree", tree); 
 
-app.use("/user", user); 
+app.use(user); 
 
 app.use("/headerVerify", header); 
 
-app.use(logine); 
+app.use("/",logine); 
 
 
 app.listen(port, () => {

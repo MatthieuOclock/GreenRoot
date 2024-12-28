@@ -25,7 +25,7 @@ function User() {
             try {
                 const token = localStorage.getItem('token');
 
-                const userResponse = await fetch(`http://localhost:1234/user`, {
+                const userResponse = await fetch(`http://localhost:1234/userInfo`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -36,7 +36,7 @@ function User() {
                 const userData = await userResponse.json();
                 setUser(userData);
 
-                const treesResponse = await fetch(`${process.env.URL_API}user/me/trees`, {
+                const treesResponse = await fetch(`http://localhost:1234/treeForUser`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -46,7 +46,7 @@ function User() {
                 }
                 const treesData = await treesResponse.json();
                 setTrees(treesData);
-                const ordersResponse = await fetch(`${process.env.URL_API}order/me/trees`, {
+                const ordersResponse = await fetch(`http://localhost:1234/treeForUsers`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -84,7 +84,7 @@ function User() {
         try {
             const token = localStorage.getItem('token');
             const userId = user.id;
-            const response = await fetch(`${process.env.URL_API}user/${userId}`, {
+            const response = await fetch(`${process.env.URL_API}/user/${userId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

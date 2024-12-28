@@ -40,7 +40,7 @@ function Trees() {
         ) : (
           <p>Aucun arbre trouvé.</p>
         )}
-        <a className="panier" href="/panier">
+        <a className="panier" href="/GreenRoot/panier">
           Voir mon panier
         </a>
       </div>

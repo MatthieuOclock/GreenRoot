@@ -1,33 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
-    const [email, setEmail] = useState(""); 
-    const [password, setPassWord] = useState(""); 
+    const [formValues, setFormValues] = useState({
+        email: '',
+        password: ''
+    });
 
-    const onSubmit = (event) => { 
-        const {name ,value} = event.target; 
-
-        switch(name) {
-            case "email" : 
-                setEmail(value); 
-                break; 
-            case "password" : 
-                setPassWord(value); 
-                break; 
-        }; 
-    }
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues({
+            ...formValues,
+            [name]: value
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:1234/testlogin', {
+            const response = await fetch(`http://localhost:1234/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
-                body: JSON.stringify({email,password})
+                body: JSON.stringify(formValues)
             });
 
             if (response.ok) {
@@ -57,8 +54,8 @@ const Login = () => {
                             title="Entrez votre email"
                             id="email"
                             name="email"
-                            value={email}
-                            onChange={onSubmit}
+                            value={formValues.email}
+                            onChange={handleInputChange}
                             required
                         />
                     </div>
@@ -70,8 +67,8 @@ const Login = () => {
                             title="Entrez votre password"
                             id="password"
                             name="password"
-                            value={password}
-                            onChange={onSubmit}
+                            value={formValues.password}
+                            onChange={handleInputChange}
                             required
                         />
                     </div>

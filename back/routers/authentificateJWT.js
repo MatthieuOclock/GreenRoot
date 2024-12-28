@@ -13,7 +13,7 @@ const authenticateJWT = async (req, res, next) => {
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         console.log('Token decoded:', decoded);
-
+        
         const user = await User.findByPk(decoded.userId);
         if (!user) {
             console.log('User not found');

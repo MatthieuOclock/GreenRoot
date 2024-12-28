@@ -1,7 +1,7 @@
 const Button = () => {
     return (
       <>
-        <a href="#">
+        <a href="/GreenRoot/arbres">
           <button className="donate-Button">Faire un don →</button>
         </a>
       </>

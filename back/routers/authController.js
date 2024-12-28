@@ -50,13 +50,13 @@ const authController = {
             const foundUser = await User.findOne({ where: { email } });
 
             if (!foundUser) {
-                return res.status(401).json({ message: 'Adresse e-mail ou mot de passe incorrect.' });
+                return res.status(401).json({ message: 'Adresse e-mail incorrect.' });
             }
 
-            const isPasswordValid = await bcrypt.compare(password, foundUser.password);
-
+            const isPasswordValid = password == foundUser.password;
+            console.log(password,foundUser.password); 
             if (!isPasswordValid) {
-                return res.status(401).json({ message: 'Adresse e-mail ou mot de passe incorrect.' });
+                return res.status(401).json({ message: 'mot de passe incorrect.' });
             }
 
             const jwtToken = jwt.sign({ userId: foundUser.id }, process.env.JWT_SECRET, { expiresIn: '1h' });

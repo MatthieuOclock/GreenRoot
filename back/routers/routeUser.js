@@ -1,18 +1,10 @@
 import express from "express"; 
-import jwtUser from "../data/recupData/recupUser/jwtUser.js";
+import user from "./userController.js"; 
+import authenticateJWT from "./authentificateJWT.js";
 const route = express.Router(); 
 
+route.get('/userInfo', authenticateJWT, user.getMe);
+route.get('/treeForUser', authenticateJWT, user.getUserTrees);
 
-route.get("/", async (req,res) => { 
-    const Authorization = req.header["authorization"]; 
-    const token = Authorization && Authorization.split(' ')[1];
-
-    if(!token){
-        return res.status(401).json({ message: 'Token manquant' });
-    }; 
-
-    await jwtUser(token); 
-
-}); 
 
 export default route; 
