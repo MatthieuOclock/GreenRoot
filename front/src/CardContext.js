@@ -33,20 +33,19 @@ export const CartProvider = ({ children }) => {
     // Fonction pour ajouter un article au panier
     const addToCart = (tree) => {
         console.log("Ajout au panier:", tree);
-
+        const uniqueId = uuidv4();  // Génére un identifiant unique
         setPanier((prevPanier) => {
-            const treeExists = prevPanier.find(item => item.id === tree.id);
+            const treeExists = prevPanier.find(item => item.id === uniqueId);
             if (treeExists) {
-                // Si l'article existe déjà, on incrémente simplement sa quantité
                 return prevPanier.map(item =>
-                    item.id === tree.id ? { ...item, quantity: item.quantity + 1 } : item
+                    item.id === uniqueId ? { ...item, quantity: item.quantity + 1 } : item
                 );
             } else {
-                // Sinon, on ajoute un nouvel article avec un identifiant unique
-                return [...prevPanier, { ...tree, id: uuidv4(), quantity: 1 }];
+                return [...prevPanier, { ...tree, id: uniqueId, quantity: 1 }];
             }
         });
     };
+
 
     // Fonction pour incrémenter la quantité d'un article
     const incrementQuantity = (id) => {

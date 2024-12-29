@@ -4,9 +4,10 @@ import { toast } from "react-toastify";
 
 const CardTree = ({ treeId, race, price, description, status, picture }) => {
   const {addToCart} = useContext(CartContext);
-
+  console.log(addToCart); 
   const handleAddToCart = () => {
     addToCart({ treeId, race, price, description, status, picture });
+    console.log({ treeId, race, price, description, status, picture })
     toast.success("Votre arbre a été ajouté au panier");
   };
 

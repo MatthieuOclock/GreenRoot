@@ -20,13 +20,16 @@ import Campain from "./Main/Campain/page.js";
 import Tree from "./Main/Tree/page.js";
 import ConfirmationCommand from "./Main/ConfirmationCommand/page.js";
 import Administrateur from "./Main/BackOffice/Administateur/page.js";
+import {CartProvider } from "../../CardContext.js";
 
 import LoginTest from "../Membre/index.js";
 
 function Visiteur() {
   return (
     <div class="main">
+      <CartProvider>
       <Router>
+        
         <Header />
         <Routes>
           <Route path="*" element={<Home />} />
@@ -60,6 +63,7 @@ function Visiteur() {
         <ToastContainer />
         <Footer />
       </Router>
+      </CartProvider>
     </div>
   );
 }
